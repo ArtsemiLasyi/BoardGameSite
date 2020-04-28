@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+.photo {
+  display: block;
+  text-align: center;
+}
+
+.logo {
+  grid-area: l;
+  height: 80%;
+  width: 1fr;
+}
+
+.special {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  height: 80%;
+  width: 100%;
+  font-size: 100%;
+}
+
+.picture {
+  height: 90%;
+  width: 90%;
+  align-items: center;
+}
+
+
+
+.news {
+    text-decoration: underline;
+    text-align: left;
+    padding: 8px;
+    color: black;
+    font-size: 16px;
+    line-height: 50px;
+    background: #F39C12;
+  }
+
+  .news:hover {
+    background: #FDE3A7;
+  }
