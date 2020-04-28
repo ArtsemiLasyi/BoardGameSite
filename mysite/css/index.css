@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+.a:hover {
+  background: #D35400;
+}
+
+.photo {
+  display: block;
+  text-align: center;
+}
+
+.logo {
+  grid-area: l;
+  height: 80%;
+  width: 1fr;
+}
+
+.special {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  height: 80%;
+  width: 100%;
+  font-size: 100%;
+}
+
+.picture {
+  height: 90%;
+  width: 90%;
+  align-items: center;
+}
