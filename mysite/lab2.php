@@ -26,17 +26,23 @@
         <?php
           if (isset($_POST['arrayFirst']) and isset($_POST['arraySecond']))
           {
-            $arrayFirst = str_replace(" ", "", $_POST['arrayFirst']);
-            $arraySecond = str_replace(" ", "", $_POST['arraySecond']);
+            $arrayFirst = str_replace(" ", ",", $_POST['arrayFirst']);
+            $arraySecond = str_replace(" ", ",", $_POST['arraySecond']);
             $arrayFirst = explode(",", $arrayFirst);
             $arraySecond = explode(",", $arraySecond);
+
         
             foreach($arraySecond as $arrayElement)
               $arrayFirst[] = $arrayElement;
-            
+
             echo "Четные элементы:";    
             foreach($arrayFirst as $evenElement)
+<<<<<<< Updated upstream
               if((intval($evenElement) % 2 == 0))
                 echo $evenElement." ";    
+=======
+              if (intval($evenElement) % 2 == 0)
+                echo $evenElement . " ";    
+>>>>>>> Stashed changes
           }
         ?>
