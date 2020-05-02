@@ -9,12 +9,12 @@
 	);
 
 	if(isset($_POST['text']) && ($_POST['text'] !== "")) {
-    	$text = " " . $_POST['text'] . " ";
-    	echo "Исходный текст: " . $text . "<br>";
+		$text = " " . $_POST['text'] . " ";
+		echo "Исходный текст: " . $text . "<br>";
 		$text = preg_replace($arrayRegular['red'], "<span class=\"red_text\">$1</span>", $text);
-    	$text = preg_replace($arrayRegular['green'], "<span class=\"green_text\">$0</span>", $text);
-    	$text = preg_replace($arrayRegular['blue'], "<span class=\"blue_text\">$0</span>", $text);
-   		echo "Обработанный текст:" . $text . "<br>";
+		$text = preg_replace($arrayRegular['green'], "<span class=\"green_text\">$0</span>", $text);
+		$text = preg_replace($arrayRegular['blue'], "<span class=\"blue_text\">$0</span>", $text);
+		echo "Обработанный текст:" . $text . "<br>";
 	}
 ?>
 
