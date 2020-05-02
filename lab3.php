@@ -1,7 +1,5 @@
 <?php
 
-// Вариант №4
-
 function scanDirectory($dir)
 {
     error_reporting(0);
