@@ -12,13 +12,17 @@
     <link rel="shortcut icon" href="images/logo.png" type="image/png" />
     <title>Всё и всем про настольные игры</title>
     <?php
+      $variant = 4;
       $fileName='';
       $page = 'page';
       $css = 'css/';
       $main = 'index';
+
       $arrayLabMenu = array(
         'Вторая' => 'lab2',
-        'Третья' => 'lab3'
+        'Третья' => 'lab3',
+        'Четвертая' => 'lab4',
+        'Пятая' => 'lab5'
       );
       $arrayMenu = array(
         'Главная' => $main,
@@ -28,6 +32,8 @@
         'Игры' => 'games',
         'Войти' => 'account'
       );
+
+
       if (isset($_GET[$page])){
         foreach ($arrayLabMenu as $key => $arrayElement) {
           if ($key === $_GET[$page]){
@@ -39,6 +45,7 @@
         $fileName = "labs.css";
       }
     ?>
+
     <link rel="stylesheet" type="text/css" href="<?php echo $css . $fileName; ?>">
     <link href="css/common.css" rel="stylesheet" type="text/css">
   </head>
@@ -52,7 +59,7 @@
         <?php
           foreach ($arrayMenu as $key => $arrayElement) {
             echo '<form method="get" class = "a" action="index.php">';
-            if ((isset($_GET[$page]) && ($key === $_GET[$page]))||((!isset($_GET[$page]))&&($arrayElement === $main))) {
+            if ((isset($_GET[$page]) && ($key === $_GET[$page]))) {
             ?>
               <input type="submit" name="page" class="active_a" value="<?php echo $key; ?>"> 
             <?php
@@ -76,8 +83,14 @@
             }
           }
           if (!isset($_GET[$page])) {
-            echo '<a href="labs.php?page=lab2" class="news">Лабораторная работа №2. Вариант 4</a>';
-            echo '<a href="labs.php?page=lab3" class="news">Лабораторная работа №3. Вариант 4</a>';
+            $i = 2;
+            foreach ($arrayLabMenu as $key => $arrayElement) {
+              ?>
+              <a href="<?php echo 'labs.php?page='. $arrayElement;?>" class="news"><?php echo "Лабораторная работа №" . $i . ". Вариант " . $variant;?></a><br>
+
+        <?php
+              $i++;
+            }
           }
         ?>
       </content>
