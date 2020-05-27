@@ -1,14 +1,18 @@
 <?php
 
-  if(isset($_GET['cookiename'])){
-      setcookie($_GET['cookiename'], null, -1);
-      header("Location: labs.php?page=lab6");
-  }
+   include_once('getstatistics.php');
+   include_once('sendmail.php');
 
-  if(isset($_POST['setcookie'])){
-      include_once('cookie.php');
-      header("Location: labs.php?page=lab6");
-  }
+
+   if(isset($_GET['cookiename'])) {
+       setcookie($_GET['cookiename'], null, -1);
+       header("Location: labs.php?page=lab6");
+   }
+
+   if(isset($_POST['setcookie'])){
+       include('cookie.php');
+       header("Location: labs.php?page=lab6");
+   }
 
 ?>
 
@@ -18,7 +22,6 @@
     <meta charset="UTF-8" />
     <meta name="description" content="Главная страница сайта" />
     <meta name="keywords" content="Настольня, настольные игры" />
-    <meta http-equiv="refresh" content="60" />
     <meta
       name="viewport"
       content="width=device-width, height=device-height, initial-scale=1.0"
@@ -37,8 +40,9 @@
         'Третья' => 'lab3',
         'Четвертая' => 'lab4',
         'Пятая' => 'lab5',
-        'Шестая'=> 'lab6'
-       
+        'Шестая'=> 'lab6',
+        'Седьмая' => 'lab7',
+        'Восьмая' => 'lab8'
       );
       $arrayMenu = array(
         'Главная' => $main,
