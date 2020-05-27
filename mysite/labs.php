@@ -1,3 +1,17 @@
+<?php
+
+  if(isset($_GET['cookiename'])){
+      setcookie($_GET['cookiename'], null, -1);
+      header("Location: labs.php?page=lab6");
+  }
+
+  if(isset($_POST['setcookie'])){
+      include_once('cookie.php');
+      header("Location: labs.php?page=lab6");
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -22,7 +36,9 @@
         'Вторая' => 'lab2',
         'Третья' => 'lab3',
         'Четвертая' => 'lab4',
-        'Пятая' => 'lab5'
+        'Пятая' => 'lab5',
+        'Шестая'=> 'lab6'
+       
       );
       $arrayMenu = array(
         'Главная' => $main,
